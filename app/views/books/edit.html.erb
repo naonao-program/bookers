@@ -1,0 +1,21 @@
+<h2>Editing Books</h2>
+
+<%= form_for @book do |f| %>
+<%= render 'layouts/error_messages', model: f.object %>
+
+	<div class="field" >
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+
+	<div class="field" >
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</div>
+
+	<div class="action" >
+		<%= f.submit "Update Book" %>
+	</div>
+<% end %>
+<%= link_to 'Show', book_path %>|
+<%= link_to 'Back', books_path %>
