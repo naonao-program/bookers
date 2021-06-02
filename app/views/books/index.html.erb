@@ -25,7 +25,10 @@
 <h2>New Books</h2>
 
 <%= form_for @book do |f| %>
-<%= render 'layouts/error_messages', model: f.object %>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <%= render 'layouts/error_messages', model: f.object %>
+<% end %>
 
 	<div class="field" >
 		<%= f.label :title %>
